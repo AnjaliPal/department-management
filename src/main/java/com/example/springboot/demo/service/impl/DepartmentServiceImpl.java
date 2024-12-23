@@ -3,6 +3,8 @@ package com.example.springboot.demo.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +15,14 @@ import com.example.springboot.demo.service.DepartmentService;
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
 
+    protected static final Logger logger = LogManager.getLogger();
+
     @Autowired
     DepartmentRepository departmentRepository;
 
     @Override
     public List<Department> getDepartmentList() {
+        logger.info("Finding all the departments!");
         return departmentRepository.findAll();
     }
 
