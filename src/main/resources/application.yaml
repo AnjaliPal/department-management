@@ -12,3 +12,9 @@ spring:
     
 server:
   port: 9080
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
