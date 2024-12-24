@@ -9,6 +9,10 @@ spring:
     driverClassName: org.h2.Driver
     username: test
     password: test
+  security:
+    user:
+      name: admin
+      password: admin
     
 server:
   port: 9080
